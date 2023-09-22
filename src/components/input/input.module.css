@@ -1,8 +1,16 @@
 .input{
+    width: 100%;
     padding: 15px 30px;
     border: none;
     background-color: #dfdddd;
     border-radius: 10px;
     text-align: center;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    outline-color: #24e0a4;
+    font-size: 1vw;
+}
+@media only screen and (max-width: 600px){
+    .input{
+        font-size: 8px;
+    }
 }

@@ -1,10 +1,19 @@
 .button{
+    width: 100%;
     padding: 15px 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.3vw;
+    text-transform: uppercase;
     background-color: #07be8d;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
+    color: #272545;
     cursor: pointer;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 600px){
+    .button{
+        font-size: 10px;
+    }
 }

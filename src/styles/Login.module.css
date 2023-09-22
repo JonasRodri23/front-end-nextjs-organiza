@@ -1,13 +1,78 @@
-.background {
-    background-color: #000000;
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Open+Sans:wght@400;700&display=swap');
+
+
+.loginpage {
+    background-color: #151429;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+.left_login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.left_login{
+    color: #24e0a4;
+    font-size: 1.8vw;
+    text-align: center;
+}
+
+.right_login{
+    width: 50vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .form{
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+.link_acesso{
+    color: #24e0a4;
+    font-size: 0.8vw;
+}
+.link {
+    text-decoration: underline;
+}
+.link:hover{
+    color: #78fad1;
+    font-size: 0.8vw;
+    text-decoration: underline;
+}
+ .left_login > h1{
+    font-size: 3vw;
+ }
+
+ @media only screen and (max-width: 600px){
+    .loginpage{
+        flex-direction: column;
+    }
+    .left_login > h1{
+        display: none;
+    }
+    .left_login{
+        width: 100%;
+        height: auto;
+    }
+    .right_login{
+        width: 100%;
+        height: auto;
+    }
+    .link_acesso{
+        font-size: 10px;
+    }
+    .link:hover{
+        font-size: 10px;
+    }
+ }
