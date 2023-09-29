@@ -1,0 +1,82 @@
+.formTransacao h3{
+  text-align: center;
+    font-size: 1.8vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    color: #272545;
+    margin-bottom: 10px;
+}
+
+.tipoButtons {
+  gap: 10px;
+  display: flex;
+}
+
+.tipoButtons button {
+  border: 0;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.tipoButtons button.active {
+  background-color: #383568;
+  color: white;
+}
+
+.formTransacao label {
+ display: flex;
+ flex-direction: column;
+ font-size: 1.2vw;
+ font-family: 'Inter', sans-serif;
+ font-weight: 700;
+ margin: 5px;
+ align-items: center;
+} 
+
+.formTransacao input {
+   display: flex;
+    width: 60%;
+    border: none;
+    padding: 5px 0;
+    margin-left: 3px;
+    background-color: #dfdddd;
+    border-radius: 5px;
+    text-align: center;
+    outline-color: #272545;
+    font-size: 1vw;
+    font-family: 'Inter', sans-serif;
+ }
+
+ .formTransacao input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+   margin: 0;
+ }
+ .formTransacao input[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ .formTransacao input[type="number"] {
+   -moz-appearance-: textfield;
+ }
+
+.botaoAdd {
+  margin-left: 30%;
+  margin-top: 5px; 
+  border: 0;
+  padding: 10px;
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  background-color: #383568;
+  color: #fff;
+}

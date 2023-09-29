@@ -46,7 +46,7 @@ export default function LoginPage() {
                     
                     <Input type="password" placeholder="Sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                     
-                    {errorMessage && <p style={{ color: 'red', fontSize: '1vw' }}>{errorMessage}</p>}
+                    {errorMessage && <p style={{ color: 'red', fontSize: '0.8vw', fontFamily: 'Inter'}}>{errorMessage}</p>}
                    
                     <Button type="submit">Entrar</Button>
                     <div className={styles.link_acesso}>Ainda não possui conta? <Link className={styles.link} href="/cadastro">cadastre-se</Link></div>

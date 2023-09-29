@@ -1,0 +1,91 @@
+ .listTrasancao h2 {
+    text-align: center;
+    font-size: 1.8vw;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    color: #272545;
+    margin-bottom: 10px;
+}
+.listTrasancao {
+  width: 100%; /* Ajuste a largura da div pai conforme desejado */
+  margin: 0 auto;}
+
+.transacaoTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.transacaoTable th, .transacaoTable td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.transacaoTable th {
+  background-color: #f5f5f5;
+}
+
+.transacaoTable tr {
+  background-color: #ffffff;
+}
+
+.transacaoTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.rowReceita, .rowDespesa {
+  font-weight: bold;
+}
+
+.rowReceita {
+  color: #00aa00; /* Verde para receita */
+}
+
+.rowDespesa {
+  color: #ff0000; /* Vermelho para despesa */
+}
+
+.tableStyles {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tableStyles th, .tableStyles td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tableStyles th {
+  background-color: #f5f5f5;
+}
+
+.tableStyles tr {
+  background-color: #ffffff;
+}
+
+.tableStyles tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tableStyles .rowReceita, .tableStyles .rowDespesa {
+  font-weight: bold;
+}
+
+.tableStyles .rowReceita {
+  color: #00aa00; /* Verde para receita */
+ 
+}
+
+.tableStyles .rowDespesa {
+  color: #ff0000; /* Vermelho para despesa */
+ 
+}
+
+

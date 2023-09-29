@@ -1,0 +1,32 @@
+.body {
+  background-color: #eff0f2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.formTransacao {
+  background-color: #ffffff;
+  width: 25%;
+  height: 65%;
+  padding: 30px 35px;
+  margin: 60px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listTransacao {
+  background-color: #ffffff;
+  width: 60%;
+  height: 100%;
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+}

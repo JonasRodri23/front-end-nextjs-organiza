@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Open+Sans:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 .loginpage {
     background-color: #151429;
@@ -41,6 +42,7 @@
 .link_acesso{
     color: #24e0a4;
     font-size: 0.8vw;
+    font-family: 'Inter', sans-serif;
 }
 .link {
     text-decoration: underline;

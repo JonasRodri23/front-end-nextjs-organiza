@@ -8,6 +8,7 @@
     margin-bottom: 10px;
     outline-color: #24e0a4;
     font-size: 1vw;
+    font-family: 'Inter', sans-serif;
 }
 @media only screen and (max-width: 600px){
     .input{

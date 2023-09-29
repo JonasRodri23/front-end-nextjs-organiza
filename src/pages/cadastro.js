@@ -53,8 +53,8 @@ export default function CadastroPage() {
                     
                     <Input type="password" placeholder="Sua senha" value={password} onChange={(e) => setPassword(e.target.value)}/>
                     
-                    {errorMessage && <p style={{ color: 'red', fontSize: '1vw' }}>{errorMessage}</p>}
-                    {message && <p style={{ color: '#24e0a4', fontSize: '1vw' }}>{message}</p>}
+                    {errorMessage && <p style={{ color: 'red', fontSize: '0.8vw', fontFamily: 'Inter' }}>{errorMessage}</p>}
+                    {message && <p style={{ color: '#24e0a4', fontSize: '0.8vw', fontFamily: 'Inter' }}>{message}</p>}
                     
                     <Button type="submit">Cadastrar</Button>
                     
