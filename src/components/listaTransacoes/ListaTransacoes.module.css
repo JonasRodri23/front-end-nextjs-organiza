@@ -1,109 +1,88 @@
- .listTrasancao h2 {
-    text-align: center;
-    font-size: 1.8vw;
-    text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    margin-left: 250px;
-    color: #272545;
-    margin-bottom: 10px;
-    margin-top: 30px;
+
+.title{
+  font-family: 'Inter', sans-serif;
+  font-size: 2vw;
+  color: #272545;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
-.listTrasancao {
-  width: 100%; /* Ajuste a largura da div pai conforme desejado */
-  margin: 0 auto;}
+
+.tableContainer {
+  max-width: 100%;
+  overflow-x: auto;
+}
 
 .transacaoTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  text-align: center;
-  padding: 30px 35px;
-  margin: 0 100px;
-  box-shadow: 0px 10px 40px #00000056;
 }
 
 .transacaoTable th, .transacaoTable td {
   padding: 12px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
 }
 
 .transacaoTable th {
-  background-color: #f5f5f5;
-}
-
-.transacaoTable tr {
-  background-color: #ffffff;
-}
-
-.transacaoTable tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.rowReceita, .rowDespesa {
-  font-weight: bold;
+  background-color: #564eaa;
+  color: #ffff;
+  text-align: center;
 }
 
 .rowReceita {
-  color: #00aa00; /* Verde para receita */
+  color: #007BFF;
 }
 
 .rowDespesa {
-  color: #ff0000; /* Vermelho para despesa */
+  color: #FF4500;
 }
 
-.tableStyles {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.tableStyles th, .tableStyles td {
-  padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-.tableStyles th {
-  background-color: #f5f5f5;
-}
-
-.tableStyles tr {
-  background-color: #ffffff;
-}
-
-.tableStyles tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.tableStyles .rowReceita, .tableStyles .rowDespesa {
-  font-weight: bold;
-}
-
-.tableStyles .rowReceita {
-  color: #00aa00; /* Verde para receita */
- 
-}
-
-.tableStyles .rowDespesa {
-  color: #ff0000; /* Vermelho para despesa */
- 
-}
 .buttonDelete {
   background-image: url('../../../public/trash-bin.png');
   background-repeat: no-repeat;
-  background-size: 30px;
+  background-size: cover; /* Certifica-se de que a imagem cubra todo o botão */
+  border: none;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  
-  
 }
 
 .buttonDelete:hover {
-   transform: scale(1.1);
+ transform: scale(1.1);
 }
 
+/* Estilos para telas menores (smartphones) */
+@media (max-width: 767px) {
+  .title {
+    font-size: 4vw; /* Ajuste o tamanho da fonte para smartphones */
+    margin-top: 10px; /* Ajuste a margem superior para smartphones */
+  }
 
+  .tableContainer {
+    overflow-x: auto;
+    padding: 10px; /* Adicione um pouco de preenchimento para melhorar a aparência */
+  }
+
+  .transacaoTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Ajuste a margem superior para smartphones */
+  }
+
+  .transacaoTable th, .transacaoTable td {
+    padding: 8px; /* Ajuste o preenchimento para smartphones */
+  }
+
+  .buttonDelete {
+    width: 20px; /* Ajuste o tamanho do ícone para smartphones */
+    height: 20px; /* Ajuste o tamanho do ícone para smartphones */
+    cursor: pointer;
+  }
+  
+  .buttonDelete:hover {
+    transform: scale(1); /* Ajuste a escala ao passar o mouse para smartphones */
+  }
+}

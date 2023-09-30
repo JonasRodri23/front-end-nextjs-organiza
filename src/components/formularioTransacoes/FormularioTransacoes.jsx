@@ -26,8 +26,8 @@ const FormularioTransacoes = ({ onAddTransacao }) => {
   };
 
   return (
-    <form onSubmit={handleAddTransacao} className={styles.formTransacao}>
-      <h3>Adicionar transação</h3>
+    <div className={styles.formCard}>
+      <h3 className={styles.cardHeader}>Adicionar transação</h3>
       <div className={styles.tipoButtons}>
         <button
           type="button"
@@ -44,32 +44,41 @@ const FormularioTransacoes = ({ onAddTransacao }) => {
           Despesa
         </button>
       </div>
-      <label>
+      <label className={styles.cardLabel}>
         Descrição:
         <input
           type="text"
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
+          className={styles.cardInput}
         />
       </label>
-      <label>
+      <label className={styles.cardLabel}>
         Valor:
         <input
           type="number"
           value={valor}
           onChange={(e) => setValor(e.target.value)}
+          className={styles.cardInput}
         />
       </label>
-      <label>
+      <label className={styles.cardLabel}>
         Data:
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+          className={styles.cardInput}
         />
       </label>
-      <button type="submit"className={styles.botaoAdd}>+ Adicionar</button>
-    </form>
+      <button
+        type="submit"
+        onClick={handleAddTransacao}
+        className={styles.cardButton}
+      >
+        + Adicionar
+      </button>
+    </div>
   );
 };
 

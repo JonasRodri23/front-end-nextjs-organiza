@@ -1,11 +1,66 @@
-.formTransacao h3{
+.formCard {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px ;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow:  24px 24px 55px #a8a8a8,
+               -24px -24px 55px #ffffff;
+  width: 300px; /* Defina o tamanho do card conforme necessário */
+  margin: 0 auto; /* Centraliza o card na tela */
+}
+
+.cardHeader{
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5vw;
+  margin-bottom: 20px;
+  color: #272545;
   text-align: center;
-    font-size: 1.8vw;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    margin: 0;
-    color: #272545;
-    margin-bottom: 10px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cardLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.2vw;
+}
+
+.cardInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.cardInput input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+   margin: 0;
+ }
+ .cardInput input[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ .cardInput input[type="number"] {
+   -moz-appearance-: textfield;
+ }
+
+.cardButton {
+  background-color: #383568;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.2vw;
+}
+
+.cardButton:hover {
+  background-color: #005f6b;
 }
 
 .tipoButtons {
@@ -16,8 +71,9 @@
 .tipoButtons button {
   border: 0;
   padding: 10px;
-  width: 150px;
-  height: 50px;
+  width: 15vw;
+  height: 7vh;
+  font-size: 1.2vw;
   margin: 0 auto;
   cursor: pointer;
   border-radius: 8px;
@@ -30,53 +86,41 @@
   color: white;
 }
 
-.formTransacao label {
- display: flex;
- flex-direction: column;
- font-size: 1.2vw;
- font-family: 'Inter', sans-serif;
- font-weight: 700;
- margin: 5px;
- align-items: center;
-} 
+@media (max-width: 767px) {
+  .formCard {
+    width: 80%; /* Ajuste o tamanho do card para smartphones */
+    padding: 15px; /* Ajuste o preenchimento para smartphones */
+    margin: 20px auto; /* Centralize o card na tela para smartphones */
+  }
 
-.formTransacao input {
-   display: flex;
-    width: 60%;
-    border: none;
-    padding: 5px 0;
-    margin-left: 3px;
-    background-color: #dfdddd;
-    border-radius: 5px;
-    text-align: center;
-    outline-color: #272545;
-    font-size: 1vw;
-    font-family: 'Inter', sans-serif;
- }
+  .cardHeader {
+    font-size: 4vw; /* Ajuste o tamanho da fonte para smartphones */
+    margin-top: 10px; /* Ajuste a margem superior para smartphones */
+    margin-bottom: 10px; /* Ajuste a margem inferior para smartphones */
+  }
 
- .formTransacao input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-   margin: 0;
- }
- .formTransacao input[type="number"]::-webkit-outer-spin-button {
-   -webkit-appearance: none;
-   margin: 0;
- }
- .formTransacao input[type="number"] {
-   -moz-appearance-: textfield;
- }
+  .cardLabel {
+    font-size: 3vw; /* Ajuste o tamanho da fonte para smartphones */
+    margin-bottom: 8px; /* Ajuste a margem inferior para smartphones */
+  }
 
-.botaoAdd {
-  margin-left: 30%;
-  margin-top: 5px; 
-  border: 0;
-  padding: 10px;
-  width: 140px;
-  height: 40px;
-  cursor: pointer;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  background-color: #383568;
-  color: #fff;
+  .cardInput {
+    padding: 8px; /* Ajuste o preenchimento para smartphones */
+    margin-bottom: 8px; /* Ajuste a margem inferior para smartphones */
+  }
+
+  .cardInput input[type="number"] {
+    font-size: 3vw; /* Ajuste o tamanho da fonte para smartphones */
+  }
+
+  .cardButton {
+    padding: 8px 16px; /* Ajuste o preenchimento para smartphones */
+    font-size: 3vw; /* Ajuste o tamanho da fonte para smartphones */
+  }
+
+  .tipoButtons button {
+    padding: 8px; /* Ajuste o preenchimento para smartphones */
+    font-size: 3vw; /* Ajuste o tamanho da fonte para smartphones */
+  }
 }
+
