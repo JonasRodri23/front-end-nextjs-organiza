@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ListaTransacoes.module.css";
 
-const ListaTransacoes = ({ transacoes }) => {
+const ListaTransacoes = ({ transacoes, onExcluirTransacao }) => {
   return (
     <div className={styles.listTrasancao}>
       <h2>Extrato</h2>
@@ -9,9 +9,10 @@ const ListaTransacoes = ({ transacoes }) => {
         <thead>
           <tr>
             <th>Descrição</th>
-            <th>Valor</th>
             <th>Tipo</th>
             <th>Data</th>
+            <th>Valor</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -25,11 +26,15 @@ const ListaTransacoes = ({ transacoes }) => {
               }
             >
               <td>{transacao.descricao}</td>
+              <td>{transacao.tipo}</td>
+              <td>{transacao.date}</td>
               <td>
                 {transacao.tipo === "Despesa" ? `-R$${Math.abs(transacao.valor)}` : `R$${transacao.valor}`}
               </td>
-              <td>{transacao.tipo}</td>
-              <td>{transacao.date}</td>
+              <td>
+                <button onClick={() => onExcluirTransacao(index)} className={styles.buttonDelete}>
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
