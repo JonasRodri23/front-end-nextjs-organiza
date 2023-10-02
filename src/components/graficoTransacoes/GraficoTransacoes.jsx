@@ -12,12 +12,6 @@ const GraficoTransacoes = ({ transacoes }) => {
       chartInstance.current.destroy();
     }
 
-    const transacoes = [
-      { date: '2023-10-01', valor: 100 },
-      { date: '2023-10-02', valor: 200 },
-      // Outros objetos de transação
-    ];
-
     const dadosPorData = transacoes.reduce((dados, transacao) => {
       const data = transacao.date;
       const valor = transacao.valor;

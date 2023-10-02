@@ -5,12 +5,11 @@
   padding: 20px;
   background-color: #eff0f2;
   min-height: 100vh;
-  
 }
 
 .content {
   width: 100%;
-  max-width: 100%; /* Ajuste a largura máxima conforme necessário */
+  max-width: 800px; /* Ajuste a largura máxima conforme necessário */
 }
 
 /* Estilos para telas menores (exemplo: smartphones e tablets) */
