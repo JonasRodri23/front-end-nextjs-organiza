@@ -6,17 +6,11 @@ const GraficoTransacoes = ({ transacoes }) => {
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    const chartCanvas = chartRef.current.getContext('2d');
+    const chartCanvas = chartRef.current;
 
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
-
-    const transacoes = [
-      { date: '2023-10-01', valor: 100 },
-      { date: '2023-10-02', valor: 200 },
-      // Outros objetos de transação
-    ];
 
     const dadosPorData = transacoes.reduce((dados, transacao) => {
       const data = transacao.date;
@@ -47,6 +41,7 @@ const GraficoTransacoes = ({ transacoes }) => {
           {
             label: 'Receitas',
             data: receitas,
+            barThickness: 40,
             borderColor: '#00ff00',
             borderWidth: 2,
             pointBackgroundColor: '#00ff00',
@@ -54,11 +49,12 @@ const GraficoTransacoes = ({ transacoes }) => {
             pointRadius: 3,
             pointHoverRadius: 5,
             tension: 0.4,
-            backgroundColor:  '#00ff00' 
+            backgroundColor:  '#00ff00'
           },
           {
             label: 'Despesas',
             data: despesas,
+            barThickness: 40,
             borderColor: '#ff0000',
             borderWidth: 2,
             pointBackgroundColor: '#ff0000',
@@ -109,7 +105,7 @@ const GraficoTransacoes = ({ transacoes }) => {
   }, [transacoes]);
 
   return (
-    <canvas ref={chartRef} width="400px" height="200px"></canvas>
+    <canvas ref={chartRef} width={400} height={200}></canvas>
   );
 };
 

@@ -40,6 +40,7 @@ const Transacoes = () => {
           transacoes={transacoes}
           onExcluirTransacao={handleExcluirTransacao}
         />
+       {/*  <GraficoTransacoes transacoes={transacoes} /> */}
       </div>
     </div>
   );

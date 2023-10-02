@@ -16,17 +16,17 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton to="/transacoes" >
+    <ListItemButton to="/investimentos" >
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Transações" />
+      <ListItemText primary="Investimentos" />
     </ListItemButton>
-    <ListItemButton to="/investimentos">
+    <ListItemButton to="/transacoes">
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Investimentos" />
+      <ListItemText primary="Transações" />
     </ListItemButton>
   </React.Fragment>
 );
