@@ -32,6 +32,9 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  backgroundColor: "#272545", // Cor do header
+  color: "#ffffff", // Cor do texto
+  fontFamily: "'Inter', sans-serif",
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
