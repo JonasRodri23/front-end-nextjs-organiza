@@ -2,9 +2,9 @@ import styles from '../styles/Login.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import LoginCard from "@/components/loginCard/loginCard"
-import Input from '@/components/input/input'
-import Button from '@/components/button/button'
+import LoginCard from "@/components/LoginCard/LoginCard"
+import Input from '@/components/Input/Input'
+import Button from '@/components/Button/Button'
 
 import React, { useState } from 'react';
 import { registerUser } from '../utils/localStorage';

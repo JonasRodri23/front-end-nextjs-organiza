@@ -18,4 +18,32 @@
     max-width: none; /* Remove a largura máxima */
     width: 100%;
   }
+  .backButton {
+    padding: 12px 24px; 
+    font-size: 4vw; 
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
+    z-index: 1000;
+  }
 }
+.backButton {
+  background-color: #383568;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.8vw;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.backButton:hover {
+  background-color: #005f6b;
+}
+

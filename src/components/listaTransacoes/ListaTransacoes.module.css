@@ -5,6 +5,7 @@
   color: #272545;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -12,12 +13,15 @@
 .tableContainer {
   max-width: 100%;
   overflow-x: auto;
+  box-shadow:  -14px -14px 28px #b8b8b8,
+                14px 14px 28px #ffffff;
 }
 
 .transacaoTable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  box-shadow:  -14px -14px 44px #a4a4a4,
+             14px 14px 44px #ffffff;
 }
 
 .transacaoTable th, .transacaoTable td {
@@ -30,6 +34,7 @@
   background-color: #564eaa;
   color: #ffff;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .rowReceita {

@@ -1,0 +1,141 @@
+.header{
+  width: 100vw;
+  min-height: 18vh;
+  background-color: #272545;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+.header h1{
+  padding-top: 14px;
+  text-align: center;
+  font-size: 1.8vw;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+.header button{
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #27a87f;
+  margin-top: 5px;
+
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #e0e0e0;
+  box-shadow:  -5px -5px 10px #5a5a5a,
+             5px 5px 10px #ffffff;
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.card h3 {
+  font-size: 1.8vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #272545;
+  
+}
+
+.card p {
+  font-size: 1vw;
+  margin: 5px 0;
+}
+
+.card button {
+  background-color: #272545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Oculta o botão por padrão */
+}
+
+.card:hover button {
+  display: block; /* Exibe o botão quando o card é hover */
+}
+
+.modal-expense-content h3{
+  font-size: 1vw;
+}
+
+.modal-expense-content input {
+  width: 100%;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #24e0a4;
+}
+.modal-expense-content label {
+  font-size: 1vw;
+}
+
+.modal-expense-content button {
+  background-color: #272545;
+  color: white;
+  border: none;
+  font-size: 1vw;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Adicionando margem acima do botão */
+}
+
+.modal-expense-content button:hover {
+  background-color: #3c3788;
+}
+/* Estilos para o modal de adicionar orçamento */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Estilos para o modal de adicionar valores gastos */
+  .modal-expense-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    height: auto; /* Altere a altura para se ajustar ao conteúdo */
+    width: 100%;
+  }
+  
