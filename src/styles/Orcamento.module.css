@@ -92,6 +92,7 @@
 }
 
 .modal-expense-content button {
+  display: flex;
   background-color: #272545;
   color: white;
   border: none;
@@ -101,6 +102,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px; /* Adicionando margem acima do botão */
+  margin-bottom: 10px;
 }
 
 .modal-expense-content button:hover {
@@ -137,6 +139,11 @@
     max-width: 400px;
     height: auto; /* Altere a altura para se ajustar ao conteúdo */
     width: 100%;
+  }
+  .closebutton{
+    display: flex;
+    background-color: red;
+    color: #ffffff;
   }
 
 

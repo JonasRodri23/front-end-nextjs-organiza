@@ -59,11 +59,19 @@ const BudgetPage = () => {
     closeModal();
   };
 
+  const handleDeleteBudget = () => {
+    if (selectedBudgetIndex !== null) {
+      const updatedBudgets = budgets.filter((budget, index) => index !== selectedBudgetIndex);
+      setBudgets(updatedBudgets);
+      closeModal();
+    }
+  };
+
   return (
     <div>
       <div className={styles.header}>
-      <h1>Definição de Orçamento</h1>
-      <button onClick={handleAddBudget}>Adicionar Orçamento</button>
+        <h1>Definição de Orçamento</h1>
+        <button onClick={handleAddBudget}>Adicionar Orçamento</button>
       </div>
       <div className={styles["cards-container"]}>
         {budgets.map((budget, index) => (
@@ -93,6 +101,7 @@ const BudgetPage = () => {
                     </ul>
                   </div>
                 )}
+                <button onClick={handleDeleteBudget} style={{ color: '#fff', backgroundColor: "red", display: "flex", fontSize: "0.8vw" }}>EXCLUIR</button>
               </div>
             )}
           </div>
