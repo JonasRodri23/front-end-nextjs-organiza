@@ -1,41 +1,46 @@
-import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
-import FormularioTransacoes from "../components/FormularioTransacoes/FormularioTransacoes";
-import ListaTransacoes from "../components/ListaTransacoes/ListaTransacoes";
-import styles from "../styles/Transacoes.module.css";
-import Head from "next/head";
-import Link from "next/link";
-=======
+import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import Badge from '@mui/material/Badge';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import FormularioTransacoes from "../components/formularioTransacoes/FormularioTransacoes";
-import ListaTransacoes from "../components/listaTransacoes/ListaTransacoes";
-import styles from "../styles/Transacoes.module.css";
-import Head from "next/head";
-import { mainListItems, secondaryListItems } from '@/components/dashboard/listItems';
 import CssBaseline from '@mui/material/CssBaseline';
-import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
+import Box from '@mui/material/Box';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { mainListItems, secondaryListItems } from './listItems';
+import Deposits from './Deposits';
+import Orders from './Orders';
+import GraficoTransacoes from '../graficoTransacoes/GraficoTransacoes';
 
-
-
-
-
-const defaultTheme = createTheme();
 
 const drawerWidth = 240;
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -62,53 +67,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
->>>>>>> 4ff84929be3f493fc49c069214a70fd7ef853c6f
 
-const Transacoes = () => {
-  const [transacoes, setTransacoes] = useState([]);
+// TODO remove, this demo shouldn't need to reset the theme.
+const defaultTheme = createTheme();
+
+export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
-
-  useEffect(() => {
-    const storedTransacoes =
-      JSON.parse(localStorage.getItem("transacoes")) || [];
-    setTransacoes(storedTransacoes);
-  }, []);
-
-  const handleAddTransacao = (transacao) => {
-    const updatedTransacoes = [...transacoes, transacao];
-    setTransacoes(updatedTransacoes);
-    localStorage.setItem("transacoes", JSON.stringify(updatedTransacoes));
-  };
-
-  const handleExcluirTransacao = (index) => {
-    const updatedTransacoes = transacoes.filter((_, i) => i !== index);
-    setTransacoes(updatedTransacoes);
-    localStorage.setItem("transacoes", JSON.stringify(updatedTransacoes));
-  };
-
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   return (
-<<<<<<< HEAD
-    <div className={styles.container}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Link href="/dashboard">
-        <button className={styles.backButton}>Voltar ao Dashboard</button>
-      </Link>
-      <div className={styles.content}>
-        <FormularioTransacoes onAddTransacao={handleAddTransacao} />
-        <ListaTransacoes
-          transacoes={transacoes}
-          onExcluirTransacao={handleExcluirTransacao}
-        />
-      </div>
-    </div>
-=======
-
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
@@ -137,7 +106,7 @@ const Transacoes = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Transações
+              Dashboard
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -180,25 +149,43 @@ const Transacoes = () => {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <div className={styled.container} >
-              <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              </Head>
-              <div className={styles.content}>
-                <FormularioTransacoes onAddTransacao={handleAddTransacao} />
-                <ListaTransacoes
-                  transacoes={transacoes}
-                  onExcluirTransacao={handleExcluirTransacao}
-                />
-              </div>
-            </div>
+            <Grid container spacing={3}>
+              {/* Chart */}
+              <Grid item xs={12} md={8} lg={9}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <GraficoTransacoes />
+                </Paper>
+              </Grid>
+              {/* Recent Deposits */}
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <Deposits />
+                </Paper>
+              </Grid>
+              {/* Recent Orders */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Orders />
+                </Paper>
+              </Grid>
+            </Grid>
           </Container>
         </Box>
       </Box>
     </ThemeProvider>
-
->>>>>>> 4ff84929be3f493fc49c069214a70fd7ef853c6f
   );
-};
-
-export default Transacoes;
+}
