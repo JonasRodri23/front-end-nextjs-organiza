@@ -1,27 +1,19 @@
-.card {
-    background-color: #f2f2f2; /* Cor de fundo mais clara */
-    border: 1px solid #ddd; /* Borda com cor mais suave */
-    border-radius: 10px; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
-    padding: 20px; /* Maior espaço interno */
-    margin: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
+
+  /*
   .card:hover {
-    transform: translateY(-6px); /* Eleva um pouco mais no hover */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra maior no hover */
+    transform: translateY(-6px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
   }
   
   .cardHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px; /* Um pouco mais de espaço abaixo do cabeçalho */
+    margin-bottom: 16px;
   }
   
   .cardHeader h2 {
-    font-size: 22px; /* Tamanho de fonte ligeiramente maior */
+    font-size: 22px; 
     margin: 0;
   }
   
@@ -29,11 +21,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 28px; /* Ícone um pouco maior */
-    color: #e74c3c; /* Cor do ícone */
+    font-size: 28px; 
+    color: #e74c3c;
   }
-  
-  /* Adicione estas classes no seu arquivo Card.module.css */
+
   .cardForm {
     display: flex;
     flex-direction: column;
@@ -62,4 +53,5 @@
   .cardForm button:hover {
     background-color: #0056b3;
   }
+   */
   

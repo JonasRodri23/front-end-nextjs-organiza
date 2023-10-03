@@ -1,5 +1,6 @@
 // BudgetForm.js
 import React, { useState } from 'react';
+import styles from "./FormOrcamento.module.css"
 
 const BudgetForm = ({ onSave }) => {
   const [title, setTitle] = useState('');
@@ -18,7 +19,8 @@ const BudgetForm = ({ onSave }) => {
   };
 
   return (
-    <div>
+    <div className={styles.formOrcamento}>
+      <h1>Adicionar Orçamento</h1>
       <label htmlFor="budgetTitle">Título do Orçamento:</label>
       <input type="text" id="budgetTitle" value={title} onChange={handleTitleChange} />
       <label htmlFor="plannedValue">Valor Planejado:</label>

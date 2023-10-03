@@ -1,43 +1,44 @@
 import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import styles from '../styles/Investimentos.module.css'
+import Head from "next/head";
+import Link from "next/link";
 
 const Investimentos = () => {
   const [cards, setCards] = useState([]);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [value, setValue] = useState('');
-  const [earnings, setEarnings] = useState('');
+  const [titulo, setTitulo] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [valor, setValor] = useState('');
+  const [ganhos, setGanhos] = useState('');
   const [editingIndex, setEditingIndex] = useState(-1);
 
   const handleAddCard = () => {
     if (editingIndex === -1) {
       const newCard = {
-        title,
-        description,
-        value,
-        earnings,
+        titulo,
+        descricao,
+        valor,
+        ganhos,
       };
       setCards([...cards, newCard]);
     } else {
       const updatedCards = [...cards];
       updatedCards[editingIndex] = {
-        title,
-        description,
-        value,
-        earnings,
+        titulo,
+        descricao,
+        valor,
+        ganhos,
       };
       setCards(updatedCards);
       setEditingIndex(-1);
     }
 
-    setTitle('');
-    setDescription('');
-    setValue('');
-    setEarnings('');
+    setTitulo('');
+    setDescricao('');
+    setValor('');
+    setGanhos('');
   };
 
   const handleRemoveCard = (index) => {
@@ -48,74 +49,126 @@ const Investimentos = () => {
 
   const handleEditCard = (index) => {
     const selectedCard = cards[index];
-    setTitle(selectedCard.title);
-    setDescription(selectedCard.description);
-    setValue(selectedCard.value);
-    setEarnings(selectedCard.earnings);
+    setTitulo(selectedCard.titulo);
+    setDescricao(selectedCard.descricao);
+    setValor(selectedCard.valor);
+    setGanhos(selectedCard.ganhos);
     setEditingIndex(index);
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Value"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Earnings"
-            value={earnings}
-            onChange={(e) => setEarnings(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Button variant="contained" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleAddCard}>
-            {editingIndex === -1 ? 'Add Card' : 'Update Card'}
+    <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Link href="/dashboard">
+        <button className={styles.backButton}>Voltar ao Dashboard</button>
+      </Link>
+    <div className={styles.container}>
+      <div className={styles.formContainer}>
+        <h2>Investimentos</h2>
+      <label>Titulo:</label>
+        <input
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+          variant="outlined"
+          className={styles.inputField}
+        />
+        <label>Descrição:</label>
+        <input
+          value={descricao}
+          onChange={(e) => setDescricao(e.target.value)}
+          variant="outlined"
+          className={styles.inputField}
+        />
+        <label>Valor:</label>
+        <input
+          value={valor}
+          onChange={(e) => setValor(e.target.value)}
+          variant="outlined"
+          className={styles.inputField}
+        />
+        <label>Ganhos:</label>
+        <input
+          value={ganhos}
+          onChange={(e) => setGanhos(e.target.value)}
+          variant="outlined"
+          className={styles.inputField}
+        />
+        <Button
+          variant="contained"
+          className={styles.buttonPrimary}
+          onClick={handleAddCard}
+          style={{ backgroundColor:"#272545",
+            color:"white",
+            fontWeight: "bold",
+            padding: "10px",
+            marginTop: "10px",
+            border: "none",
+            cursor: "pointer",
+            borderRadius: "5px"}}
+        >
+          {editingIndex === -1 ? 'Adicionar Investimentos' : 'Editar Investimento'}
+        </Button>
+        {editingIndex !== -1 && (
+          <Button
+            onClick={() => setEditingIndex(-1)}
+            style={{ backgroundColor:"#d40000",
+            color:"white",
+            fontWeight: "bold",
+            padding: "10px",
+            marginTop: "10px",
+            border: "none",
+            cursor: "pointer",
+            borderRadius: "5px"}}
+          >
+            Cancelar
           </Button>
-          {editingIndex !== -1 && (
-            <Button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded" onClick={() => setEditingIndex(-1)} style={{ marginLeft: 10 }}>
-              Cancel
-            </Button>
-          )}
-        </Grid>
-      </Grid>
+        )}
+      </div>
+      </div>
 
-      <div style={{ marginTop: 20 }}>
+      <div className={styles.cardsContainer}>
         {cards.map((card, index) => (
-          <div key={index} style={{ marginBottom: 10 }}>
+          <div key={index} className={styles.card}>
             <Card>
               <CardContent>
-                <h2>{card.title}</h2>
-                <p>{card.description}</p>
-                <p>Value: {card.value}</p>
-                <p>Earnings: {card.earnings}</p>
-                <Button variant="contained" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleEditCard(index)}>
-                  Edit
+                <h2>{card.titulo}</h2>
+                <p>{card.descricao}</p>
+                <p>Valor: {card.valor}</p>
+                <p>Ganhos: {card.ganhos}</p>
+                <Button
+                  variant="contained"
+                  className={styles.buttonEdit}
+                  onClick={() => handleEditCard(index)}
+                  style={{ backgroundColor:"#272545",
+                            color:"white",
+                            fontWeight: "bold",
+                            fontSize: "0.8vw",
+                            padding: "5px",
+                            marginTop: "10px",
+                            marginRight: "10px",
+                            border: "none",
+                            cursor: "pointer",
+                            borderRadius: "5px"}}
+                          >
+                  Editar
                 </Button>
-                <Button variant="contained" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleRemoveCard(index)} style={{ marginLeft: 10 }}>
-                  Remove
+                <Button
+                  variant="contained"
+                  className={styles.buttonDelete}
+                  onClick={() => handleRemoveCard(index)}
+                  style={{ backgroundColor:"#d40000",
+                            color:"white",
+                            fontWeight: "bold",
+                            fontSize: "0.8vw",
+                            padding: "5px",
+                            marginTop: "10px",
+                            border: "none",
+                            cursor: "pointer",
+                            borderRadius: "5px"}}
+                          >
+                  Remover
                 </Button>
               </CardContent>
             </Card>

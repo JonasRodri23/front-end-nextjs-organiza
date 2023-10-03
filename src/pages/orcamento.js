@@ -3,8 +3,17 @@ import Modal from "../components/Modal/Modal";
 import ExpenseForm from "../components/FormDespesa/FormDespesa";
 import BudgetForm from "../components/FormOrcamento/FormOrcamento";
 import styles from "../styles/Orcamento.module.css";
+import Head from "next/head";
+import Link from "next/link";
+import { useEffect } from "react";
 
 const BudgetPage = () => {
+  useEffect(() => {
+    const storedBudgets =
+      JSON.parse(localStorage.getItem("budgets")) || [];
+    setBudgets(storedBudgets);
+  }, []);
+
   const [budgets, setBudgets] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedBudgetIndex, setSelectedBudgetIndex] = useState(null);
@@ -69,9 +78,15 @@ const BudgetPage = () => {
 
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <div className={styles.header}>
+      <Link href="/dashboard">
+        <button className={styles.backButton}>Voltar ao Dashboard</button>
+      </Link>
         <h1>Definição de Orçamento</h1>
-        <button onClick={handleAddBudget}>Adicionar Orçamento</button>
+        <button className={styles.addOrcamento} onClick={handleAddBudget}>Adicionar Orçamento</button>
       </div>
       <div className={styles["cards-container"]}>
         {budgets.map((budget, index) => (
@@ -112,11 +127,6 @@ const BudgetPage = () => {
         <div className={styles.modal}>
           <div className={styles["modal-content"]}>
             <Modal
-              title={
-                selectedBudgetIndex !== null
-                  ? "Adicionar Gasto"
-                  : "Adicionar Orçamento"
-              }
               onClose={closeModal}
             >
               {selectedBudgetIndex !== null ? (
