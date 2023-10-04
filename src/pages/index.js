@@ -7,6 +7,7 @@ import Button from "../components/Button/Button";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { loginUser } from "../utils/localStorage";
+import Head from "next/head";
 
 export default function LoginPage() {
   // Estado para armazenar email, senha e mensagens de erro
@@ -31,6 +32,9 @@ export default function LoginPage() {
 
   return (
     <div className={styles.loginpage}>
+      <Head>
+        <title>Organiza</title>
+      </Head>
       <div className={styles.left_login}>
         <h4>
           Conecte-se ao Organiza e gerencie suas finanças de forma eficaz.

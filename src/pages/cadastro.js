@@ -1,6 +1,7 @@
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 import LoginCard from "@/components/LoginCard/LoginCard";
 import Input from "@/components/Input/Input";
@@ -41,6 +42,9 @@ export default function CadastroPage() {
 
   return (
     <div className={styles.loginpage}>
+      <Head>
+        <title>Cadastre-se</title>
+      </Head>
       <div className={styles.left_login}>
         <h4>
           Crie uma conta no Organiza <br /> e inicie o caminho para uma vida

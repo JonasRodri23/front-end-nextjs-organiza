@@ -60,6 +60,7 @@ const Investimentos = () => {
   return (
     <div>
       <Head>
+        <title>Investimentos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Link href="/dashboard">

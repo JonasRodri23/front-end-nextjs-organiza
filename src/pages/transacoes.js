@@ -33,6 +33,7 @@ const Transacoes = () => {
   return (
     <div className={styles.container}>
       <Head>
+        <title>Transações</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Link href="/dashboard">

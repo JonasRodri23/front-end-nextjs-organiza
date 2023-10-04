@@ -24,11 +24,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Transações" />
     </ListItemButton>
-    <ListItemButton to="/orcamento">
+    <ListItemButton to="/orcamentos">
       <ListItemIcon>
         <AttachMoneyIcon />
       </ListItemIcon>
-      <ListItemText primary="Orçamento" />
+      <ListItemText primary="Orçamentos" />
     </ListItemButton>
     <ListItemButton to="/investimentos" >
       <ListItemIcon>
