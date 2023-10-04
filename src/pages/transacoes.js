@@ -6,20 +6,24 @@ import Head from "next/head";
 import Link from "next/link";
 
 const Transacoes = () => {
+  // Estado para armazenar as transações
   const [transacoes, setTransacoes] = useState([]);
 
+  // Carrega as transações do armazenamento local ao inicializar
   useEffect(() => {
     const storedTransacoes =
       JSON.parse(localStorage.getItem("transacoes")) || [];
     setTransacoes(storedTransacoes);
   }, []);
 
+  // Função para adicionar uma transação
   const handleAddTransacao = (transacao) => {
     const updatedTransacoes = [...transacoes, transacao];
     setTransacoes(updatedTransacoes);
     localStorage.setItem("transacoes", JSON.stringify(updatedTransacoes));
   };
 
+ // Função para excluir uma transação
   const handleExcluirTransacao = (index) => {
     const updatedTransacoes = transacoes.filter((_, i) => i !== index);
     setTransacoes(updatedTransacoes);
@@ -40,7 +44,6 @@ const Transacoes = () => {
           transacoes={transacoes}
           onExcluirTransacao={handleExcluirTransacao}
         />
-       {/*  <GraficoTransacoes transacoes={transacoes} /> */}
       </div>
     </div>
   );

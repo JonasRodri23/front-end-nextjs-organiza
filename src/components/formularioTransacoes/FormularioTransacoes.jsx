@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import styles from './FormularioTransacoes.module.css';
+import React, { useState } from "react";
+import styles from "./FormularioTransacoes.module.css";
 
 const FormularioTransacoes = ({ onAddTransacao }) => {
-  const [descricao, setDescricao] = useState('');
-  const [valor, setValor] = useState('');
-  const [tipo, setTipo] = useState(''); 
-  const [date, setDate] = useState('');
+  // Estados para armazenar os dados do formulário
+  const [descricao, setDescricao] = useState("");
+  const [valor, setValor] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [date, setDate] = useState("");
 
+  // Função para lidar com a adição de uma transação
   const handleAddTransacao = (e) => {
     e.preventDefault();
     if (!descricao || !valor || !tipo || !date) return;
 
+    // Cria um objeto representando a transação
     const transacao = {
       descricao,
       valor: parseFloat(valor),
@@ -18,11 +21,12 @@ const FormularioTransacoes = ({ onAddTransacao }) => {
       date,
     };
 
+    // Chama a função de adicionar transação passada por propriedade
     onAddTransacao(transacao);
-    setDescricao('');
-    setValor('');
-    setTipo('');
-    setDate('');
+    setDescricao("");
+    setValor("");
+    setTipo("");
+    setDate("");
   };
 
   return (
@@ -31,15 +35,15 @@ const FormularioTransacoes = ({ onAddTransacao }) => {
       <div className={styles.tipoButtons}>
         <button
           type="button"
-          onClick={() => setTipo('Receita')}
-          className={tipo === 'Receita' ? styles.active : ''}
+          onClick={() => setTipo("Receita")}
+          className={tipo === "Receita" ? styles.active : ""}
         >
           Receita
         </button>
         <button
           type="button"
-          onClick={() => setTipo('Despesa')}
-          className={tipo === 'Despesa' ? styles.active : ''}
+          onClick={() => setTipo("Despesa")}
+          className={tipo === "Despesa" ? styles.active : ""}
         >
           Despesa
         </button>

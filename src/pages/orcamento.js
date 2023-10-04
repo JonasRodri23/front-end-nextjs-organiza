@@ -8,33 +8,38 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 const BudgetPage = () => {
-  useEffect(() => {
-    const storedBudgets =
-      JSON.parse(localStorage.getItem("budgets")) || [];
-    setBudgets(storedBudgets);
-  }, []);
-
+   // Estados para armazenar os orçamentos e controle de exibição de modais
   const [budgets, setBudgets] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedBudgetIndex, setSelectedBudgetIndex] = useState(null);
   const [isExpenseFormVisible, setIsExpenseFormVisible] = useState(false);
 
+   // Carrega os orçamentos do armazenamento local ao inicializar
+   useEffect(() => {
+    const storedBudgets = JSON.parse(localStorage.getItem("budgets")) || [];
+    setBudgets(storedBudgets);
+  }, []);
+
+  // Função para adicionar um novo orçamento
   const handleAddBudget = () => {
     setSelectedBudgetIndex(null);
     setShowModal(true);
   };
 
+ // Função para mostrar as despesas de um orçamento
   const handleShowExpenses = (index) => {
     setSelectedBudgetIndex(index);
     setIsExpenseFormVisible((prev) => !prev);
   };
 
+  // Função para fechar o modal
   const closeModal = () => {
     setShowModal(false);
     setSelectedBudgetIndex(null);
     setIsExpenseFormVisible(false);
   };
 
+  // Função para salvar um novo orçamento
   const handleSaveBudget = (title, plannedValue) => {
     if (title && plannedValue) {
       const newBudget = {
@@ -49,6 +54,7 @@ const BudgetPage = () => {
     closeModal();
   };
 
+   // Função para salvar uma nova despesa
   const handleSaveExpense = (expenseTitle, expenseValue) => {
     if (selectedBudgetIndex !== null && expenseTitle && expenseValue) {
       const updatedBudgets = budgets.map((budget, index) =>
@@ -68,9 +74,12 @@ const BudgetPage = () => {
     closeModal();
   };
 
+ // Função para excluir um orçamento
   const handleDeleteBudget = () => {
     if (selectedBudgetIndex !== null) {
-      const updatedBudgets = budgets.filter((budget, index) => index !== selectedBudgetIndex);
+      const updatedBudgets = budgets.filter(
+        (budget, index) => index !== selectedBudgetIndex
+      );
       setBudgets(updatedBudgets);
       closeModal();
     }
@@ -82,11 +91,13 @@ const BudgetPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className={styles.header}>
-      <Link href="/dashboard">
-        <button className={styles.backButton}>Voltar ao Dashboard</button>
-      </Link>
+        <Link href="/dashboard">
+          <button className={styles.backButton}>Voltar ao Dashboard</button>
+        </Link>
         <h1>Definição de Orçamento</h1>
-        <button className={styles.addOrcamento} onClick={handleAddBudget}>Adicionar Orçamento</button>
+        <button className={styles.addOrcamento} onClick={handleAddBudget}>
+          Adicionar Orçamento
+        </button>
       </div>
       <div className={styles["cards-container"]}>
         {budgets.map((budget, index) => (
@@ -116,7 +127,17 @@ const BudgetPage = () => {
                     </ul>
                   </div>
                 )}
-                <button onClick={handleDeleteBudget} style={{ color: '#fff', backgroundColor: "red", display: "flex", fontSize: "0.8vw" }}>EXCLUIR</button>
+                <button
+                  onClick={handleDeleteBudget}
+                  style={{
+                    color: "#fff",
+                    backgroundColor: "red",
+                    display: "flex",
+                    fontSize: "0.8vw",
+                  }}
+                >
+                  EXCLUIR
+                </button>
               </div>
             )}
           </div>
@@ -126,9 +147,7 @@ const BudgetPage = () => {
       {showModal && (
         <div className={styles.modal}>
           <div className={styles["modal-content"]}>
-            <Modal
-              onClose={closeModal}
-            >
+            <Modal onClose={closeModal}>
               {selectedBudgetIndex !== null ? (
                 <ExpenseForm onSave={handleSaveExpense} />
               ) : (

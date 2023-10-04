@@ -6,6 +6,7 @@ const ListaTransacoes = ({ transacoes, onExcluirTransacao }) => {
     <div className={styles.listTrasancao}>
       <h2 className={styles.title}>Extrato</h2>
       <div className={styles.tableContainer}>
+        {/* Tabela para exibir as transações */}
         <table className={`${styles.transacaoTable} ${styles.tableStyles}`}>
           <thead>
             <tr>
@@ -17,6 +18,7 @@ const ListaTransacoes = ({ transacoes, onExcluirTransacao }) => {
             </tr>
           </thead>
           <tbody>
+            {/* Mapeia e exibe as transações na tabela */}
             {transacoes.map((transacao, index) => (
               <tr
                 key={index}
@@ -30,19 +32,16 @@ const ListaTransacoes = ({ transacoes, onExcluirTransacao }) => {
                 <td>{transacao.tipo}</td>
                 <td>{transacao.date}</td>
                 <td>
-                  {transacao.tipo === "Despesa" ? `-R$${Math.abs(transacao.valor)}` : `R$${transacao.valor}`}
+                  {transacao.tipo === "Despesa"
+                    ? `-R$${Math.abs(transacao.valor)}`
+                    : `R$${transacao.valor}`}
                 </td>
                 <td>
-                <button
-                  onClick={() => onExcluirTransacao(index)}
-                  className={styles.buttonDelete}
-                >
-                </button>
+                  <button
+                    onClick={() => onExcluirTransacao(index)}
+                    className={styles.buttonDelete}
+                  ></button>
                 </td>
-                {/* <td>
-                  <button onClick={() => onExcluirTransacao(index)} className={styles.buttonDelete}>
-                  </button>
-                </td> */}
               </tr>
             ))}
           </tbody>

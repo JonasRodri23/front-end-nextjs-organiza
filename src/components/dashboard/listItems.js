@@ -7,6 +7,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 
 export const mainListItems = (
@@ -40,6 +41,12 @@ export const mainListItems = (
         <NotificationsIcon />
       </ListItemIcon>
       <ListItemText primary="Notificações" />
+    </ListItemButton>
+    <ListItemButton to="/">
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <ListItemText primary="Sair" />
     </ListItemButton>
   </React.Fragment>
 );
