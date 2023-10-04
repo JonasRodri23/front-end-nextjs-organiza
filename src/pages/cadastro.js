@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
-import LoginCard from "../components/loginCard/LoginCard";
-import Input from "../components/button/Button";
-import Button from "../components/button/Button";
+import LoginCard from "@/components/loginCard/loginCard";
+import Input from "@/components/input/input";
+import Button from "@/components/button/button";
 
 import React, { useState } from "react";
 import { registerUser } from "../utils/localStorage";

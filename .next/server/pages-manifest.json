@@ -1,0 +1,14 @@
+{
+  "/_app": "pages/_app.js",
+  "/cadastro": "pages/cadastro.html",
+  "/dashboard": "pages/dashboard.html",
+  "/_document": "pages/_document.js",
+  "/investimentos": "pages/investimentos.html",
+  "/notificacoes": "pages/notificacoes.html",
+  "/api/hello": "pages/api/hello.js",
+  "/transacoes": "pages/transacoes.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/orcamentos": "pages/orcamentos.html",
+  "/404": "pages/404.html"
+}
