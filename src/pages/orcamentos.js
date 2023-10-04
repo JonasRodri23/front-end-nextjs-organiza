@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Modal from "../components/Modal/Modal";
-import ExpenseForm from "../components/FormDespesa/FormDespesa";
-import BudgetForm from "../components/FormOrcamento/FormOrcamento";
+import Modal from "../components/modal/Modal";
+import ExpenseForm from "../components/formDespesa/FormDespesa";
+import BudgetForm from "../components/formOrcamento/FormOrcamento";
 import styles from "../styles/Orcamento.module.css";
 import Head from "next/head";
 import Link from "next/link";

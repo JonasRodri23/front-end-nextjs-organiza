@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import FormularioTransacoes from "../components/FormularioTransacoes/FormularioTransacoes";
-import ListaTransacoes from "../components/ListaTransacoes/ListaTransacoes";
+import FormularioTransacoes from "../components/formularioTransacoes/FormularioTransacoes";
+import ListaTransacoes from "../components/listaTransacoes/ListaTransacoes";
 import styles from "../styles/Transacoes.module.css";
 import Head from "next/head";
 import Link from "next/link";
