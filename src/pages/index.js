@@ -1,9 +1,9 @@
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LoginCard from "../components/LoginCard/LoginCard";
-import Input from "../components/Input/Input";
-import Button from "../components/Button/Button";
+import LoginCard from "../components/LoginCard";
+import Input from "../components/Input";
+import Button from "../components/Button";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { loginUser } from "../utils/localStorage";
